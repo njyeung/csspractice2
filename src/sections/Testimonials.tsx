@@ -7,7 +7,8 @@ import avatar6 from "@/assets/avatar-6.png";
 import avatar7 from "@/assets/avatar-7.png";
 import avatar8 from "@/assets/avatar-8.png";
 import avatar9 from "@/assets/avatar-9.png";
-
+import Image from "next/image";
+import { TestimonialCol } from "./TestimonialsCol";
 const testimonials = [
   {
     text: "As a seasoned designer always on the lookout for innovative tools, Framer.com instantly grabbed my attention.",
@@ -65,6 +66,28 @@ const testimonials = [
   },
 ];
 
+const firstColumn = testimonials.slice(0,3);
+const secondColumn = testimonials.slice(3,6);
+const thirdColumn = testimonials.slice(6,9);
+
+
 export const Testimonials = () => {
-  return null;
+  return <section className="bg-white">
+    <div className="container">
+      <div className="section-heading-wrapper">
+        <div className="flex justify-center">
+          <div className="tag">Testimonials</div>
+        </div>
+        <h2 className="section-header mt-5">What our users say</h2>
+        <p className="section-description mt-5">
+          From intuitive design to powerful features, our app has become an essential tool for users around the world.
+        </p>
+      </div>
+      <div className="flex justify-center gap-6">
+        <TestimonialCol testimonials={firstColumn}/>
+        <TestimonialCol testimonials={secondColumn} className={"hidden md:flex"}/>
+        <TestimonialCol testimonials={thirdColumn} className={"hidden lg:flex"}/>
+      </div>
+    </div>
+  </section>;
 };

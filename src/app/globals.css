@@ -44,4 +44,12 @@
     .section-heading-wrapper {
       @apply max-w-2xl mx-auto
     }
+
+    .card {
+      @apply p-10 border border-[#e1e1e1] rounded-3xl shadow-[0_7px_14px_#EAEAEA] max-w-xs w-full
+    }
+
+    .testimonial-fade {
+      mask-image: linear-gradient(to bottom, transparent, black 25%, black 75%, transparent)
+    }
 }

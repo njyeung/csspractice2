@@ -53,13 +53,13 @@ const pricingTiers = [
 ];
 
 export const Pricing = () => {
-  return <section className="py-24">
+  return <section className="py-24 bg-white">
     <div className="container">
       <h2 className='section-header header-gradient section-heading-wrapper'>Pricing</h2>
       <p className="section-description mt-5">Free forever. Upgrade for unlimited tasks, better security, and exclusive features</p>
       <div className='flex flex-col gap-6 items-center mt-10 lg:flex-row lg:items-end justify-center'>
         {pricingTiers.map((tier, index)=>
-          <div className={twMerge('p-10 border border-[#e1e1e1] rounded-3xl shadow-[0_7px_14px_#EAEAEA] max-w-xs w-full', index%2==1 ? 'border-black bg-black text-white' : '')}>
+          <div className={twMerge('card', index%2==1 ? 'border-black bg-black text-white' : '')}>
             <div className='flex justify-between'>
               <h3 className={twMerge('text-lg font-bold text-black/50', index%2==1 ? 'text-white/60' : '' )}>{tier.title}</h3>
               { tier.popular === true ? 
